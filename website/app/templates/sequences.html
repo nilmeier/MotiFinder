@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+      <div class="starter­template"> 
+        <h1>MotiFinder</h1> 
+        <p class="lead">Enter your motif and hit Go!.<br> </p>
+      </div>
+      
+<div class="row">
+  <div class="col-lg-6">
+  <form action="" method="get">
+    <div class="input-group">
+      <input name="motif" type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn  btn-primary" type="submit">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </form>
+  </div>
+  </div>
+  <div class="row">    
+    <div class="btn-group btn-group-justified">
+      <div class="col-md-2"> 
+        <form action="" method="get">
+            <input name="motif" type="text" value="{{motif}}" class="form-control hidden">
+            <input name='start-row' type="text" value="{{prev_set}}" class="form-control hidden"> 
+            <button type="submit" class="btn btn-default"> Prev &nbsp; {{list_length}}</button>
+        </form>
+       </div>
+       <div class="col-md-2 pull-left">
+        <form action="" method="get">
+            <input name="motif" type="text" value="{{motif}}" class="form-control hidden">
+            <input name='start-row' type="text" value={{next_set}} class="form-control hidden"> 
+            <button type="submit" class="btn btn-default">Next &nbsp;{{list_length}}</button>
+        </form>
+        </div>
+    </div>
+  </div>
+
+<div class="row">
+<ul id="mytab" class="nav nav-tabs" role="tablist">
+  <li class="active">
+    <a href="#table" role="tab" data-toggle="tab">Table</a>
+  </li>
+  <li class="">
+    <a href="#chart1" role="tab" data-toggle="tab">Chart1</a>
+  </li>
+</ul>
+</div>
+<div class="row">
+  <div id="mytabContent" class="tab-content">
+   <div class="tab-pane fade" id="chart1">
+	<div id="vis"></div>
+   </div>
+    <div class="tab-pane fade active in" id="table">
+     <table class="table table­hover"> 
+
+    <br><tr><th>Results for &nbsp; {{motif}}</th><th></th><th>in {{dt}} s</th>
+    
+    </tr>
+   
+    <tr><th>Gene ID</th><th>Row</th><th>Sequence</th></tr> 
+
+ 
+
+    
+    {% for record in records %} 
+    <tr><td>{{record['row_count']}})&nbsp;{{ record['gene_ID'] }}</td><td>{{ record['index_ID'] }}<td>{{record['seq1'] }}<b><font color="red">{{record['seq2']}}</font></b>{{record['seq3']}}</td></tr> 
+    {% endfor %} 
+    </table>
+   </div>
+
+</div>
+</div>
+
+<script type="text/javascript">
+// parse a spec and create a visualization view
+  chart_data = {{mpld3_data | safe}};
+  mpld3.draw_figure("vis", chart_data);
+</script>
+
+{% endblock body %} 
+

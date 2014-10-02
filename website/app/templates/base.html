@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head>
+  
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+   <ul class="nav navbar-nav">
+     <li><a href="{{url_for('index')}}">Home</a>
+     <li><a href="{{url_for('slides')}}">Slides</a>
+   </ul>
+   </div>
+   </nav>
+
+   
+    <meta charset="utf­8"> 
+    <meta http­equiv="X­UA­Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device­width, initial­scale=1"> 
+    <meta name="description" content=""> 
+    <meta name="author" content=""> 
+    <link rel="icon" href="../../favicon.ico"> 
+ 
+    <title>Starter Template for Bootstrap</title> 
+ 
+    <!­­ Bootstrap core CSS ­­> 
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet"> 
+ 
+    <!­­ Custom styles for this template ­­> 
+    <link href="starter­template.css" rel="stylesheet">
+
+ <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+        <script src="http://mpld3.github.io/js/mpld3.v0.2.js"></script> 
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+
+  </head> 
+ 
+  <body> 
+ 
+ 
+<br><br>  
+ 
+    <div class="container"> 
+    {% block body %}{% endblock body %}
+    </div>
+
+ 
+    <!­­ Bootstrap core JavaScript 
+    ================================================== ­­> 
+    <!­­ Placed at the end of the document so the pages load faster ­­> 
+
+  </body> 
+</html>                                                                   

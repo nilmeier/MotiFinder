@@ -1,0 +1,15 @@
+no configs found; falling back on auto-configuration
+no configs found; falling back on auto-configuration
+reading from STDIN
+creating tmp directory /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027
+writing to /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027/step-0-mapper_part-00000
+Counters from step 1:
+  (no counters found)
+writing to /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027/step-0-mapper-sorted
+> sort /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027/step-0-mapper_part-00000
+writing to /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027/step-0-reducer_part-00000
+Counters from step 1:
+  (no counters found)
+Moving /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027/step-0-reducer_part-00000 -> data/.mr1.out/part-00000
+Streaming final output from data/.mr1.out
+removing tmp directory /tmp/mr1_load_tsv_assign_motifs.ubuntu.20141002.142636.627027
