@@ -55,7 +55,7 @@ def sequence_page_test():
     if (motif_row!=''):
         hbase_motif_string='notNone'
         i_column=i_start-1
-        print motif_row
+        #print motif_row
         while hbase_motif_string !=None:
             i_column+=1
             if i_column>=i_end: break # need to fix this for specified range
@@ -63,7 +63,9 @@ def sequence_page_test():
             sequence_column_key='s:sequence'+str(i_column)
 #            print 'motif: ' + motif_row+ 'hb row:' + hbase_motif_table.fetch(motif_row)
             check=hbase_motif_table.fetch(motif_row,column_key)
-            if check==None: print check; break
+            if check==None: 
+                #print check; 
+                break
             hbase_motif_string=check['m'].values()[0]
 
             full_id=hbase_motif_string #jndb fix this double assignment!  

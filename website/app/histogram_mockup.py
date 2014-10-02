@@ -36,8 +36,8 @@ def sample_plot():
 
 
 
-    for motif in row_keys_motif:
-        print motif+ ": "+str( count[motif] )
+   # for motif in row_keys_motif:
+   #     print motif+ ": "+str( count[motif] )
 
     #for (key,value) in OrderedDict(sorted(count.items(), key=itemgetter(1),reverse=True)):
     #     print key, value
